@@ -12,7 +12,7 @@ def work(id, start, end, result):
 if __name__ == "__main__":
     start_time = datetime.now()
 
-    START, END = 0, 100000000
+    START, END = 0, 50000000
     result = list()
 
     # th1 = Thread(target=work, args=(1, START, END, result))
@@ -27,7 +27,6 @@ if __name__ == "__main__":
     th2.start()
     th1.join()
     th2.join()
-
 
 print(f"Result: {sum(result)}")
 

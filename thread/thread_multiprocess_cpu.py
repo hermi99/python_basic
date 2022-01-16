@@ -12,9 +12,9 @@ def work(id, start, end, result):
 if __name__ == "__main__":
     start_time = datetime.now()
 
-    START, END = 0, 100000000
+    START, END = 0, 50000000
     result = Queue()
-    th1 = Process(target=work, args=(1, START, END // 2, result))
+    th1 = Process(target=work, args=(1, START, END // 3, result))
     th2 = Process(target=work, args=(2, END // 2, END, result))
 
     th1.start()

@@ -1,7 +1,6 @@
-import time
 from datetime import datetime
 import os
-
+from multiprocessing import Process, Queue
 
 from threading import Thread
 
@@ -19,11 +18,10 @@ if __name__ == '__main__':
 
     threads = []
     for ip_addr in ip_list:
-        thread = Thread(target=ping, args=(ip_addr,))
+        thread = Process(target=ping, args=(ip_addr,))
 
         thread.start()
         threads.append(thread)
-        #time.sleep(0.001)
 
     for thread in threads:
         thread.join()

@@ -12,10 +12,10 @@ def work(id, start, end, result):
 if __name__ == "__main__":
     start_time = datetime.now()
 
-    START, END = 0, 100000000
+    START, END = 0, 50000000
     result = list()
 
-    work(1, 0, 100000000, result)
+    work(1, START, END, result)
 
     print(f"Result: {sum(result)}")
 
